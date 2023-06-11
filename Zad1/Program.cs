@@ -38,6 +38,8 @@
 
             Console.WriteLine();
             Console.WriteLine($"Liczba znaków do zapisania liczb od 1 do 1000: {result}");
+
+            Console.ReadLine();
         }
 
         private static string GetNumberInWrittenForm(string number)
@@ -65,7 +67,7 @@
 
             if (tens == 1 && units != 0)
             {
-                if (NumberDictionary.Teen.TryGetValue(tens, out value))
+                if (NumberDictionary.Teen.TryGetValue(units, out value))
                 {
                     result += $" {value}";
                 }
