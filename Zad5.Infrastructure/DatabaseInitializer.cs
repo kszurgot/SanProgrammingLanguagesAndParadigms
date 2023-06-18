@@ -72,15 +72,16 @@ namespace Zad5.Infrastructure
             {
                 foreach (var streetIntersection in street.Intersections)
                 {
-                    IVehicle vehicle = new Car(GenerateLicencePlate(carId));
+                    IVehicle vehicle = new Car(GenerateLicensePlate(carId));
                     Vehicles.Add(vehicle);
 
                     VehicleLocations.Add(new VehicleLocation(vehicle, street, streetIntersection));
+                    carId++;
                 }
             }
         }
 
-        static string GenerateLicencePlate(int carId)
+        static string GenerateLicensePlate(int carId)
         {
             return $"EL00{carId.ToString("00")}";
         }

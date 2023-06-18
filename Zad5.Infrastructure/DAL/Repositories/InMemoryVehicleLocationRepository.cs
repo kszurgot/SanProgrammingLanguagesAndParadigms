@@ -10,21 +10,26 @@ namespace Zad5.Infrastructure.DAL.Repositories
 {
     internal class InMemoryVehicleLocationRepository : IVehicleLocationRepository
     {
-        private List<VehicleLocation> vehicleLocations;
+        private readonly List<VehicleLocation> _vehicleLocations;
 
         public InMemoryVehicleLocationRepository(List<VehicleLocation> vehicleLocations)
         {
-            this.vehicleLocations = vehicleLocations;
+            _vehicleLocations = vehicleLocations;
         }
 
         public IEnumerable<VehicleLocation> GetAll()
         {
-            return vehicleLocations.AsEnumerable();
+            return _vehicleLocations.AsEnumerable();
+        }
+
+        public VehicleLocation? FindByVehicle(IVehicle vehicle)
+        {
+            return _vehicleLocations.FirstOrDefault(x => x.Vehicle == vehicle);
         }
 
         public void Add(VehicleLocation vehicleLocation)
         {
-            vehicleLocations.Add(vehicleLocation);
+            _vehicleLocations.Add(vehicleLocation);
         }
     }
 }

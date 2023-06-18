@@ -30,14 +30,10 @@ namespace Zad5.Infrastructure
             return _dbInitializer.Intersections;
         }
 
-        public static List<IVehicle> Vehicles(this AppContainer application)
-        {
-            return _dbInitializer.Vehicles;
-        }
-
         public static AppContainer LoadRepositories(this AppContainer application)
         {
             application.VehicleLocationRepository = new InMemoryVehicleLocationRepository(_dbInitializer.VehicleLocations);
+            application.VehicleRepository = new InMemoryVehicleRepository(_dbInitializer.Vehicles);
 
             return application;
         }

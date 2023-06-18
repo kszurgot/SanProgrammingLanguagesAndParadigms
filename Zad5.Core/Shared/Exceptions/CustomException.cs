@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zad5.Exceptions
+namespace Zad5.Core.Shared.Exceptions
 {
-    internal abstract class CustomException : Exception
+    public abstract class CustomException : Exception
     {
         protected CustomException(string message) : base(message)
         {

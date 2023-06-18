@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zad5.Core;
+using Zad5.Application.Services;
 using Zad5.Core.Repositories;
 
 namespace Zad5.Application
@@ -11,6 +11,7 @@ namespace Zad5.Application
     public sealed class AppContainer
     {
         public IVehicleLocationRepository VehicleLocationRepository { get; set; }
+        public IVehicleRepository VehicleRepository { get; set; }
         public VehicleLocationService VehicleLocationService { get; set; }
         private AppContainer() { }
 

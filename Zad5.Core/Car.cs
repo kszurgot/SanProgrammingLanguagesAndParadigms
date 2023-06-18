@@ -8,11 +8,11 @@ namespace Zad5.Core
 {
     public class Car : IVehicle
     {
-        public string LicencePlate { get; private set; }
+        public string LicensePlate { get; private set; }
 
-        public Car(string licencePlate)
+        public Car(string licensePlate)
         {
-            LicencePlate = licencePlate;
+            LicensePlate = licensePlate;
         }
     }
 }

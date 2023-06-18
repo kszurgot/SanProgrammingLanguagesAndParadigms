@@ -9,5 +9,6 @@ namespace Zad5.Core.Repositories
     public interface IVehicleLocationRepository
     {
         IEnumerable<VehicleLocation> GetAll();
+        VehicleLocation? FindByVehicle(IVehicle vehicle); 
     }
 }
